@@ -1,5 +1,12 @@
 ### Pi5 Server
 
+Core:  
+Tailscale  
+Podman  
+Caddy  
+
+
+
 
 Filesystem: Key files
 
