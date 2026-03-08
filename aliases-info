@@ -1,110 +1,157 @@
 # ~/.aliases-info
-# =============================
-# Command Information / Cheat Sheet Aliases
-# Each alias prints most useful commands (max 30 lines)
+# ==================================
+# Command Information / Cheat Sheet
 # Prefix: info.*
-# =============================
+# First item = primary documentation URL
+# ==================================
+
 
 # -----------------------------
-# Docker info
-# Prefix: info.docker
+# Terminator
 # -----------------------------
-alias info.docker='echo -e "
-Docker Commands (Most Useful):
+alias info.terminator='echo "
+Terminator — Commands / Shortcuts (Most Useful)
 
-1. List containers:               docker ps -a
-2. List running containers:       docker ps
-3. Start container:               docker start <container_name>
-4. Stop container:                docker stop <container_name>
-5. Remove container:              docker rm <container_name>
-6. Run container interactively:   docker run -it <image>
-7. View logs:                     docker logs <container_name>
-8. List images:                   docker images
-9. Remove image:                  docker rmi <image>
-10. Build image:                  docker build -t <tag> <path>
-11. Pull image:                   docker pull <image>
-12. Push image:                   docker push <image>
-13. Exec into container:          docker exec -it <container_name> /bin/bash
-14. Inspect container:            docker inspect <container_name>
-15. Remove all stopped containers:docker container prune
-16. Remove all unused images:     docker image prune -a
-17. Display Docker version:       docker --version
-18. Display Docker info:          docker info
+Docs:
+https://gnome-terminator.readthedocs.io/en/latest/
+
+1. terminator                         # Launch Terminator
+2. terminator -l <layout>             # Start with a saved layout
+3. terminator -m                      # Maximize window on start
+4. terminator --geometry=<WxH+X+Y>    # Start with specific window size/position
+5. terminator --version               # Show Terminator version
+6. terminator --help                  # Show help/command options
+
+Common Shortcuts:
+7. Ctrl + Shift + O                   # Split terminal horizontally
+8. Ctrl + Shift + E                   # Split terminal vertically
+9. Ctrl + Shift + T                   # Open new tab
+10. Ctrl + Shift + W                  # Close current terminal
+11. Ctrl + Shift + X                  # Toggle maximize terminal pane
+12. Alt + Arrow keys                  # Move between panes
+13. Ctrl + Shift + Q                  # Quit Terminator
+14. Ctrl + Shift + C                  # Copy
+15. Ctrl + Shift + V                  # Paste
+
+Config / Files:
+16. ~/.config/terminator/config       # Main configuration file
+17. terminator -p <profile>           # Launch with specific profile
+18. terminator -l <layout> -p <profile> # Layout with profile
+"'
+
+
+
+
+# -----------------------------
+# Git
+# -----------------------------
+alias info.git='echo "
+Git — Commands (Most Useful)
+
+Docs:
+https://git-scm.com/docs
+
+1. git status
+2. git add <file_or_dir>
+3. git commit -m \"message\"
+4. git push
+5. git pull
+6. git checkout <branch>
+7. git checkout -b <branch>
+8. git branch
+9. git log --oneline --graph --decorate
+10. git diff
+11. git remote -v
+12. git clone <repo>
+13. git fetch
+14. git merge <branch>
+15. git stash
+16. git stash pop
+17. git show <commit>
+18. git reset --hard <commit>
+19. git rm <file>
+20. git mv <old> <new>
+21. git tag <tag>
+22. git push origin --tags
+23. git stash list
+24. git checkout -- <file>
+25. git push -u origin <branch>
 "'
 
 # -----------------------------
-# Podman info
-# Prefix: info.podman
+# Docker
 # -----------------------------
-alias info.podman='echo -e "
-Podman Commands (Most Useful):
+alias info.docker='echo "
+Docker — Commands (Most Useful)
 
-1. List containers:               podman ps -a
-2. List running containers:       podman ps
-3. Start container:               podman start <container_name>
-4. Stop container:                podman stop <container_name>
-5. Remove container:              podman rm <container_name>
-6. Run container interactively:   podman run -it <image>
-7. View logs:                     podman logs <container_name>
-8. List images:                   podman images
-9. Remove image:                  podman rmi <image>
-10. Inspect container:            podman inspect <container_name>
-11. Exec into container:          podman exec -it <container_name> /bin/bash
-12. Display Podman version:       podman --version
-13. Display Podman info:          podman info
+Docs:
+https://docs.docker.com/reference/
+
+1. docker ps
+2. docker ps -a
+3. docker images
+4. docker run -it <image>
+5. docker logs <container>
+6. docker stop <container>
+7. docker start <container>
+8. docker rm <container>
+9. docker rmi <image>
+10. docker build -t <tag> .
+11. docker pull <image>
+12. docker push <image>
+13. docker exec -it <container> /bin/bash
+14. docker inspect <container>
+15. docker container prune
+16. docker image prune -a
+17. docker info
+18. docker --version
 "'
 
 # -----------------------------
-# SSH info
-# Prefix: info.ssh
+# Podman
 # -----------------------------
-alias info.ssh='echo -e "
-SSH Commands (Most Useful):
+alias info.podman='echo "
+Podman — Commands (Most Useful)
 
-1. Connect to host:               ssh user@host
-2. Copy file to remote:           scp file user@host:/path/
-3. Copy directory to remote:      scp -r dir user@host:/path/
-4. Forward local port:            ssh -L local_port:host:remote_port user@host
-5. Forward remote port:           ssh -R remote_port:host:local_port user@host
-6. Test connection:               ssh -T user@host
-7. Use identity file:             ssh -i ~/.ssh/id_rsa user@host
-8. Check SSH agent identities:    ssh-add -l
-9. Add identity to agent:         ssh-add ~/.ssh/id_rsa
-10. Enable verbose mode:          ssh -v user@host
-11. Copy keys to remote:          ssh-copy-id user@host
-12. List known hosts:             cat ~/.ssh/known_hosts
+Docs:
+https://docs.podman.io/en/latest/Commands.html
+
+1. podman ps
+2. podman ps -a
+3. podman images
+4. podman run -it <image>
+5. podman logs <container>
+6. podman stop <container>
+7. podman start <container>
+8. podman rm <container>
+9. podman rmi <image>
+10. podman exec -it <container> /bin/bash
+11. podman inspect <container>
+12. podman pull <image>
+13. podman build -t <tag> .
+14. podman info
+15. podman --version
 "'
 
 # -----------------------------
-# Git info
-# Prefix: info.git
+# SSH
 # -----------------------------
-alias info.git='echo -e "
-Git Commands (Most Useful):
+alias info.ssh='echo "
+SSH — Commands (Most Useful)
 
-1. Status:                        git status
-2. View log:                       git log --oneline --graph --decorate
-3. Add changes:                     git add <file_or_dir>
-4. Commit changes:                  git commit -m \"message\"
-5. Push branch:                     git push origin <branch>
-6. Pull branch:                     git pull origin <branch>
-7. Create branch:                   git checkout -b <branch>
-8. Switch branch:                   git checkout <branch>
-9. Merge branch:                    git merge <branch>
-10. Stash changes:                  git stash save \"message\"
-11. Apply stash:                    git stash pop
-12. View changes:                   git diff
-13. Add remote:                      git remote add origin <repo>
-14. Set upstream:                    git push -u origin <branch>
-15. View remotes:                    git remote -v
-16. Show commit details:             git show <commit_hash>
-17. Reset changes:                   git reset --hard <commit_hash>
-18. Remove file from index:          git rm <file>
-19. Rename file:                     git mv <old> <new>
-20. Tag commit:                      git tag <tag_name>
-21. Push tags:                       git push origin --tags
-22. View stash list:                 git stash list
-23. Apply stash selectively:         git stash apply stash@{n}
-24. Discard changes:                 git checkout -- <file>
-25. Clone repo via SSH:              git clone git@github.com:<username>/<repo>.git
+Docs:
+https://www.openssh.com/manual.html
+
+1. ssh user@host
+2. ssh -T user@host
+3. ssh -i ~/.ssh/id_file user@host
+4. scp file user@host:/path/
+5. scp -r dir user@host:/path/
+6. ssh-copy-id user@host
+7. ssh -v user@host
+8. ssh -L local_port:host:remote_port user@host
+9. ssh -R remote_port:host:local_port user@host
+10. ssh-add -l
+11. ssh-add ~/.ssh/id_file
+12. cat ~/.ssh/known_hosts
 "'
