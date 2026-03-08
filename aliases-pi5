@@ -1,0 +1,50 @@
+# ~/.aliases_reminders
+# =============================
+# Command Reminder Aliases
+# Modular, prefix.suffix style
+# =============================
+
+# -----------------------------
+# Git SSH Commands
+# Prefix: git.ssh.*
+# -----------------------------
+alias git.ssh.clone='echo "Clone repo:                             git clone git@github.com:<username>/<repo>.git"'
+alias git.ssh.remote_set='echo "Set/update remote:                      git remote set-url origin git@github.com:<username>/<repo>.git"'
+alias git.ssh.check='echo "Check SSH connection:                    ssh -T git@github.com"'
+alias git.ssh.add_commit='echo "Stage & commit:                          git add . && git commit -m \"Your message\""'
+alias git.ssh.push='echo "Push changes:                            git push origin <branch>"'
+alias git.ssh.pull='echo "Pull changes:                            git pull origin <branch>"'
+alias git.ssh.add_remote='echo "Add new remote:                          git remote add origin git@github.com:<username>/<repo>.git"'
+alias git.ssh.branch='echo "Create & switch branch:                  git checkout -b <new-branch>"'
+
+# -----------------------------
+# Git general commands
+# Prefix: git.*
+# -----------------------------
+alias git.status='echo "Status:                                 git status"'
+alias git.log='echo "View commit log:                        git log --oneline --graph --decorate"'
+alias git.diff='echo "View changes:                           git diff"'
+alias git.stash='echo "Stash changes:                          git stash save \"<message>\""'
+alias git.stash_pop='echo "Apply stash:                            git stash pop"'
+
+# -----------------------------
+# Docker commands
+# Prefix: docker.*
+# -----------------------------
+alias docker.ls='echo "List containers:                         docker ps -a"'
+alias docker.rm='echo "Remove container:                        docker rm <container_name>"'
+alias docker.run='echo "Run container interactively:             docker run -it <image>"'
+alias docker.stop='echo "Stop container:                          docker stop <container_name>"'
+alias docker.logs='echo "View logs:                               docker logs <container_name>"'
+alias docker.images='echo "List images:                             docker images"'
+
+# -----------------------------
+# Podman commands
+# Prefix: podman.*
+# -----------------------------
+alias podman.ls='echo "List containers:                         podman ps -a"'
+alias podman.rm='echo "Remove container:                        podman rm <container_name>"'
+alias podman.run='echo "Run container interactively:             podman run -it <image>"'
+alias podman.stop='echo "Stop container:                          podman stop <container_name>"'
+alias podman.logs='echo "View logs:                               podman logs <container_name>"'
+alias podman.images='echo "List images:                             podman images"'
